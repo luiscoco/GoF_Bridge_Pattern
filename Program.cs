@@ -1,4 +1,16 @@
-﻿
+﻿class Program
+{
+    static void Main(string[] args)
+    {
+        // Using raster rendering for the circle
+        Shape circle = new Circle(5.0, new RasterRenderer());
+        circle.Draw();
+
+        // Using vector rendering for the square
+        Shape square = new Square(4.0, new VectorRenderer());
+        square.Draw();
+    }
+}
 
 // Abstraction: Shape
 public abstract class Shape
@@ -80,21 +92,6 @@ public class Square : Shape
     public override void Draw()
     {
         renderer.RenderSquare(side);
-    }
-}
-
-
-class Program
-{
-    static void Main(string[] args)
-    {
-        // Using raster rendering for the circle
-        Shape circle = new Circle(5.0, new RasterRenderer());
-        circle.Draw();
-
-        // Using vector rendering for the square
-        Shape square = new Square(4.0, new VectorRenderer());
-        square.Draw();
     }
 }
 
