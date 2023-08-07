@@ -117,8 +117,9 @@ Drawing a circle of radius 5 using raster rendering.
 Drawing a square of side 4 using vector rendering.
 As you can see, the Bridge Pattern allows us to create different shapes with different rendering methods, and the two can vary independently. This promotes flexibility and maintainability in our codebase.
 
+## How to setup Github actions
 
-
+![Csharp Github actions](https://github.com/luiscoco/GoF_Csharp-7.Bridge_Pattern/assets/32194879/9579798e-f7af-4b89-91c9-3cd9b4bc8312)
 
 
 
