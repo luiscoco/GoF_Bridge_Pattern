@@ -1,5 +1,43 @@
 # GoF_Csharp-Bridge_Pattern
 
+https://www.dotnettricks.com/learn/designpatterns/bridge-design-pattern-dotnet
+
+## What is Bridge Pattern
+The bridge pattern is used to separate abstraction from its implementation so that both can be modified independently.
+
+This pattern involves an interface which acts as a bridge between the abstraction class and implementer classes and also makes the functionality of implementer class independent from the abstraction class. Both types of classes can be modified without affecting to each other.
+
+## Bridge Pattern - UML Diagram & Implementation
+The UML class diagram for the implementation of the bridge design pattern is given below:
+
+![image](https://github.com/luiscoco/GoF_Csharp-7.Bridge_Pattern/assets/32194879/ff899ca9-96c8-428e-8ea5-56a9a0dc16de)
+
+## Bridge Pattern - Example
+
+![image](https://github.com/luiscoco/GoF_Csharp-7.Bridge_Pattern/assets/32194879/6fea890d-7482-453f-bb6e-864b57c88c0e)
+
+## Who is what?
+The classes, interfaces, and objects in the above class diagram can be identified as follows:
+
+Message - Abstraction Class.
+
+SystemMessage & UserMessage- Redefined Abstraction Classes.
+
+IMessageSender- Bridge Interface.
+
+EmailSender, WebServiceSender & MSMQ Sender- ConcreteImplementation class which implements the IMessageSender interface.
+
+## When to use it?
+Abstractions and implementations should be modified independently.
+
+Changes in the implementation of an abstraction should have no impact on clients.
+
+The Bridge pattern is used when a new version of a software or system is brought out, but the older version of the software still running for its existing client. There is no need to change the client code, but the client needs to choose which version he wants to use.
+
+### Note
+Bridge pattern has nearly the same structure as the Adapter Pattern. But it is used when designing new systems instead of the Adapter pattern which is used with already existing systems.
+
+
 Decouples an abstraction from its implementation, allowing them to vary independently.
 
 The Bridge Pattern is a structural design pattern in software engineering that decouples an abstraction (e.g., an interface or abstract class) from its implementation, allowing them to vary independently. This pattern is useful when you have multiple variations of an abstraction and multiple variations of its implementation. By using the Bridge Pattern, you can avoid creating a large number of class combinations, which can lead to a more flexible and maintainable codebase.
