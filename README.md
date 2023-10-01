@@ -3,9 +3,22 @@
 https://www.dotnettricks.com/learn/designpatterns/bridge-design-pattern-dotnet
 
 ## What is Bridge Pattern
+Bridge is a structural design pattern that lets you split a large class or a set of closely related classes into two separate hierarchies—abstraction and implementation—which can be developed independently of each other.
+
+![image](https://github.com/luiscoco/GoF_Csharp-7.Bridge_Pattern/assets/32194879/412a9a8c-2c6e-452f-8b99-3ce2a7f598f3)
+
+This example illustrates how the Bridge pattern can help divide the monolithic code of an app that manages devices and their remote controls. The Device classes act as the implementation, whereas the Remotes act as the abstraction.
+
+![image](https://github.com/luiscoco/GoF_Csharp-7.Bridge_Pattern/assets/32194879/135d7115-3966-4998-aad2-81f537fdd38e)
+
+
 The bridge pattern is used to separate abstraction from its implementation so that both can be modified independently.
 
+![image](https://github.com/luiscoco/GoF_Csharp-7.Bridge_Pattern/assets/32194879/131c7634-2764-425c-b770-3b60956eaca1)
+
 This pattern involves an interface which acts as a bridge between the abstraction class and implementer classes and also makes the functionality of implementer class independent from the abstraction class. Both types of classes can be modified without affecting to each other.
+
+![image](https://github.com/luiscoco/GoF_Csharp-7.Bridge_Pattern/assets/32194879/976f23a8-33f1-4f4e-b845-752eeb18cbf1)
 
 ## Bridge Pattern - UML Diagram & Implementation
 The UML class diagram for the implementation of the bridge design pattern is given below:
