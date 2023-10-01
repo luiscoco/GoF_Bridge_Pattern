@@ -32,6 +32,45 @@ The UML class diagram for the implementation of the bridge design pattern is giv
 ![image](https://github.com/luiscoco/GoF_Csharp-7.Bridge_Pattern/assets/32194879/6fea890d-7482-453f-bb6e-864b57c88c0e)
 
 ## C# - Sample Code
+
+```csharp
+/// <summary>
+/// Bridge Design Pattern Demo
+/// </summary>
+class Program
+{
+ static void Main(string[] args)
+ {
+ IMessageSender email = new EmailSender();
+ IMessageSender queue = new MSMQSender();
+ IMessageSender web = new WebServiceSender();
+
+ Message message = new SystemMessage();
+ message.Subject = "Test Message";
+ message.Body = "Hi, This is a Test Message";
+ 
+ message.MessageSender = email;
+ message.Send();
+
+ message.MessageSender = queue;
+ message.Send();
+
+ message.MessageSender = web;
+ message.Send();
+
+ UserMessage usermsg = new UserMessage();
+ usermsg.Subject = "Test Message";
+ usermsg.Body = "Hi, This is a Test Message";
+ usermsg.UserComments = "I hope you are well";
+
+ usermsg.MessageSender = email;
+ usermsg.Send();
+
+ Console.ReadKey();
+ }
+}
+```
+
 ```csharp
 /// <summary>
 /// The 'Abstraction' class
@@ -107,42 +146,6 @@ public class WebServiceSender : IMessageSender
  public void SendMessage(string subject, string body)
  {
  Console.WriteLine("Web Service\n{0}\n{1}\n", subject, body);
- }
-}
-
-/// <summary>
-/// Bridge Design Pattern Demo
-/// </summary>
-class Program
-{
- static void Main(string[] args)
- {
- IMessageSender email = new EmailSender();
- IMessageSender queue = new MSMQSender();
- IMessageSender web = new WebServiceSender();
-
- Message message = new SystemMessage();
- message.Subject = "Test Message";
- message.Body = "Hi, This is a Test Message";
- 
- message.MessageSender = email;
- message.Send();
-
- message.MessageSender = queue;
- message.Send();
-
- message.MessageSender = web;
- message.Send();
-
- UserMessage usermsg = new UserMessage();
- usermsg.Subject = "Test Message";
- usermsg.Body = "Hi, This is a Test Message";
- usermsg.UserComments = "I hope you are well";
-
- usermsg.MessageSender = email;
- usermsg.Send();
-
- Console.ReadKey();
  }
 }
 ```
